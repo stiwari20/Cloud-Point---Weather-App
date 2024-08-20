@@ -18,48 +18,50 @@ const InfoBox = ({ info }) => {
 
   return (
     <>
-      {info.city && (
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={
-              info.temp < 10
-                ? COLD_URL
-                : info.humidity > 70
-                ? RAIN_URL
-                : HOT_URL
-            }
-            title="weather image"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              <strong>{info.city}</strong> &nbsp;
-              {info.temp < 10 ? (
-                <AcUnitIcon />
-              ) : info.humidity > 70 ? (
-                <ThunderstormIcon />
-              ) : (
-                <WbSunnyIcon />
-              )}
-            </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              component={"span"}
-            >
-              <p>Temperature: {info.temp}&deg;C</p>
-              <p>Min Temp: {info.minTemp}&deg;C</p>
-              <p>Max Temp: {info.maxTemp}&deg;C</p>
-              <p>Feels like: {info.feelsLike}&deg;C</p>
-              <p>Humidity: {info.humidity}%</p>
-              <p>Wind Speed: {info.windSpeed}Km/hr</p>
-              <p>
-                The weather can be described as <i>{info.description}</i>
-              </p>
-            </Typography>
-          </CardContent>
-        </Card>
-      )}
+      <div>
+        {info.city && (
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image={
+                info.temp < 10
+                  ? COLD_URL
+                  : info.humidity > 70
+                  ? RAIN_URL
+                  : HOT_URL
+              }
+              title="weather image"
+            />
+            <CardContent className="info">
+              <Typography gutterBottom variant="h5" component="div">
+                <strong>{info.city}</strong> &nbsp;
+                {info.temp < 10 ? (
+                  <AcUnitIcon />
+                ) : info.humidity > 70 ? (
+                  <ThunderstormIcon />
+                ) : (
+                  <WbSunnyIcon />
+                )}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                component={"span"}
+              >
+                <p>Temperature: {info.temp}&deg;C</p>
+                <p>Min Temp: {info.minTemp}&deg;C</p>
+                <p>Max Temp: {info.maxTemp}&deg;C</p>
+                <p>Feels like: {info.feelsLike}&deg;C</p>
+                <p>Humidity: {info.humidity}%</p>
+                <p>Wind Speed: {info.windSpeed}Km/hr</p>
+                <p>
+                  The weather can be described as <i>{info.description}</i>
+                </p>
+              </Typography>
+            </CardContent>
+          </Card>
+        )}
+      </div>
     </>
   );
 };

@@ -53,7 +53,7 @@ const SearchBox = ({ updateInfo }) => {
   };
 
   return (
-    <div className="SearchBox">
+    <div className="SearchBox mt-3">
       <form onSubmit={handleSubmit}>
         <TextField
           id="city"
@@ -66,6 +66,7 @@ const SearchBox = ({ updateInfo }) => {
         <br />
         <br />
         <Button
+          className="search-btn"
           variant="contained"
           size="large"
           type="submit"

@@ -19,11 +19,13 @@ const Weather = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Cloud Point</h1>
-      <SearchBox updateInfo={updateInfo} />
-      <InfoBox info={weatherInfo} />
-    </div>
+    <>
+      <div className="container d-flex flex-column justify-content-center align-items-center">
+        <h1>Cloud Point</h1>
+        <SearchBox updateInfo={updateInfo} />
+        <InfoBox info={weatherInfo} />
+      </div>
+    </>
   );
 };
 
